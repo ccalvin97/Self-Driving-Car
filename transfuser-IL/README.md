@@ -4,7 +4,7 @@
 
 
 ## Research Content:  
-[transfuser Paper](https://arxiv.org/pdf/2104.09224.pdf)    
+[Transfuser Paper](https://arxiv.org/pdf/2104.09224.pdf)    
 [Model-based RL Paper](https://arxiv.org/abs/2105.00636)    
 [Model-free RL Paper](https://arxiv.org/abs/1911.10868)   
 
@@ -13,28 +13,25 @@ Edited by kuancalvin2016@gmail.com
 Original Code from Transfuser Official Github  
 
 ## Setup
-Install anaconda
-```Shell
-wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
-bash Anaconda3-2020.11-Linux-x86_64.sh
-source ~/.profile
-```
+PS. Please make sure you install all of the things by the right order.  
 
-Clone the repo and build the environment
+1. Ubuntu 18.04   
+2. Nvidia GPU Driver  
+3. CUDA
+4. CuDNN
+5. Python 3.7 (Do not install from Anaconda)  
+6. pyGame
+7. Carla 0.9.10.1   
+8. vulkan-utils
+
+
+Trouble Shooting: 
+
+
+
+
 
 ```Shell
-git clone https://github.com/autonomousvision/transfuser
-cd transfuser
-conda create -n transfuser python=3.7
-pip3 install -r requirements.txt
-conda activate transfuser
-```
-
-Download and setup CARLA 0.9.10.1
-```Shell
-chmod +x setup_carla.sh
-./setup_carla.sh
-```
 
 ## Dataset
 The data is generated with ```leaderboard/team_code/auto_pilot.py``` in 8 CARLA towns using the routes and scenarios files provided at ```leaderboard/data``` on CARLA 0.9.10.1
