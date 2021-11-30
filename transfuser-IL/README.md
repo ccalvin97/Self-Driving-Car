@@ -56,7 +56,7 @@ PS. Please make sure you install all of the things by the right order.
 | :--: | :--:  | :--:  |
 | RouteCompletionTest | FAILURE | 8.34 % | 
 | OutsideRouteLanesTest | SUCCESS | 0 %  | 
-| CollisionTest | Train | SUCCESS | 0 times |
+| CollisionTest  | SUCCESS | 0 times |
 | RunningRedLightTest | SUCCESS | 0 times | 
 | RunningStopTest | SUCCESS | 0 times | 
 | InRouteTest | SUCCESS | NA | 
