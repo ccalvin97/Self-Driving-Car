@@ -57,18 +57,12 @@ PS. Please make sure you install all of the things by the right order.
 | RouteCompletionTest | FAILURE | 8.34 % | 
 | OutsideRouteLanesTest | SUCCESS | 0 %  | 
 | CollisionTest | Train | SUCCESS | 0 times |
-| HRNetV2-W18-Small-v2 | Train | Val | 
-| HRNetV2-W18-Small-v1 | Train | Val | 
-| HRNetV2-W18-Small-v2 | Train | Val | 
+| RunningRedLightTest | SUCCESS | 0 times | 
+| RunningStopTest | SUCCESS | 0 times | 
+| InRouteTest | SUCCESS | NA | 
+| AgentBlockedTest | FAILURE | NA | 
+| Timeout | SUCCESS | NA | 
 
-| RouteCompletionTest   │ FAILURE │ 8.34 %  │
-| OutsideRouteLanesTest │ SUCCESS │ 0 %     │
-│ CollisionTest         │ SUCCESS │ 0 times │
-│  RunningRedLightTest  │  SUCCESS│  0 times│ 
-│ RunningStopTest       │ SUCCESS │ 0 times │
-│ InRouteTest           │ SUCCESS │    NA   │
-│ AgentBlockedTest      │ FAILURE │    NA   │
-│ Timeout               │ SUCCESS │    NA   |
 
 
 ## Dataset
