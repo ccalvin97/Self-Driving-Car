@@ -63,10 +63,10 @@ PS. Please make sure you install all of the things by the right order.
 │ AgentBlockedTest      │ FAILURE │    NA   │
 │ Timeout               │ SUCCESS │    NA   |
 
-| model | Train Set | Test Set |#Params | GFLOPs | OHEM | Multi-scale| Flip | Distillation | mIoU | Link |
-| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| HRNetV2-W18-Small-v1 | Train | Val | 1.5M | 31.1 | No | No | No | No | 70.3 | dasdv|
-| HRNetV2-W18-Small-v2 | Train | Val | 3.9M | 71.6 | No | No | No | No | 76.2 | swcaD|
+| model | Train Set | Test Set |
+| :--: | :--: | :--: | 
+| HRNetV2-W18-Small-v1 | Train | Val | 
+| HRNetV2-W18-Small-v2 | Train | Val | 
 
 
 ## Dataset
