@@ -16,21 +16,26 @@ Original Code from Transfuser Official Github
 PS. Please make sure you install all of the things by the right order.  
 
 ```
-1. Ubuntu 18.04   
-2. Nvidia GPU Driver  
-3. CUDA
-4. CuDNN
-5. Python 3.7 (Do not install from Anaconda)  
-6. pyGame
-7. Carla 0.9.10.1   
-8. vulkan-utils
+1. Nvidia GPU(GeForce GTX 1080 Mobile)  
+2. Ubuntu 18.04   
+3. Nvidia GPU Driver(470.63.01)  
+4. CUDA(10.1)  
+5. CuDNN(8.0.4)
+6. Python 3.7 (Do not install from Anaconda) 
+7. pyGame
+8. Carla 0.9.10.1   
+9. Dowload the additional maps from Carla  
+10. vulkan-utils  
+11. torch(1.4.0)  
 ```
 
 **Trouble Shooting:**  
 1. Import carla not found
 - Ensure you have py3.7 egg file in the dir : /opt/carla-simulator/PythonAPI/carla/dist   
-2. 
-
+2. 4.26.2-0+++UE4+Release-4.26 522 0 Disabling core dumps. Exiting abnormally (error code: 1)  
+- Install the latest or recommended nvidia driver  
+- Downloaded the supported map package from official website.  
+- sudo apt install vulkan-utils  
 
 
 ```Shell
@@ -41,29 +46,13 @@ The data is generated with ```leaderboard/team_code/auto_pilot.py``` in 8 CARLA 
 chmod +x download_data.sh
 ./download_data.sh
 ```
+## Dataset  
+The dataset can be downloaded from official Transfuser github or generated from autopilot programme.  
 
-We used two datasets for different experimental settings:
-- clear_weather_data: contains only `ClearNoon` weather. This dataset is used for the experiments described in the paper and generalization to new town results shown in the [video](https://youtu.be/WxadQyQ2gMs).
-- 14_weathers_data: contains 14 preset weather conditions mentioned in ```leaderboard/team_code/auto_pilot.py```. This dataset is used for training models for the [leaderboard](https://leaderboard.carla.org/leaderboard) and the generalization to new weather results shown in the [video](https://youtu.be/WxadQyQ2gMs).
+The datasets from official Transfuser github include two part.  
+1. Weather Dataset: clear_weather_data, 14_weathers_data.  
+2. Minimal dataset (63G), Large scale dataset (406G). 
 
-The dataset is structured as follows:
-```
-- TownX_{tiny,short,long}: corresponding to different towns and routes files
-    - routes_X: contains data for an individual route
-        - rgb_{front, left, right, rear}: multi-view camera images at 400x300 resolution
-        - seg_{front, left, right, rear}: corresponding segmentation images
-        - depth_{front, left, right, rear}: corresponding depth images
-        - lidar: 3d point cloud in .npy format
-        - topdown: topdown segmentation images required for training LBC
-        - 2d_bbs_{front, left, right, rear}: 2d bounding boxes for different agents in the corresponding camera view
-        - 3d_bbs: 3d bounding boxes for different agents
-        - affordances: different types of affordances
-        - measurements: contains ego-agent's position, velocity and other metadata
-```
-
-We have provided two versions of the datasets used in our work:
-- Minimal dataset (63G): contains only `rgb_front`, `lidar` and `measurements` from the `14_weathers_data`. This is sufficient to train all the models (except LBC which also requires `topdown`).
-- Large scale dataset (406G): contains multi-view camera data with different perception labels and affordances for both `clear_weather_data` and `14_weathers_data` to facilitate further development of imitation learning agents.
 
 ## Data Generation
 In addition to the dataset, we have also provided all the scripts used for generating data and these can be modified as required for different CARLA versions.
