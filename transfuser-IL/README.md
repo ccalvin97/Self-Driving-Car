@@ -55,8 +55,8 @@ PS. Please make sure you install all of the things by the right order.
 | Criterion             | Result  | Value   |  
 | :--: | :--:  | :--:  |
 | RouteCompletionTest | FAILURE | 8.34 % | 
-| HRNetV2-W18-Small-v2 | Train | Val | 
-| HRNetV2-W18-Small-v1 | Train | Val | 
+| OutsideRouteLanesTest | SUCCESS | 0 %  | 
+| CollisionTest | Train | SUCCESS | 0 times |
 | HRNetV2-W18-Small-v2 | Train | Val | 
 | HRNetV2-W18-Small-v1 | Train | Val | 
 | HRNetV2-W18-Small-v2 | Train | Val | 
