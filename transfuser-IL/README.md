@@ -1,5 +1,11 @@
 # Transfuser in Imitation Learning based on Carla
 
+```
+The Logic of Transfuser:
+
+```
+
+
 <img src="transfuser/assets/teaser.svg" height="192" hspace=30> <img src="transfuser/assets/full_arch.svg" width="400">
 
 
@@ -36,9 +42,37 @@ PS. Please make sure you install all of the things by the right order.
 - Install the latest or recommended nvidia driver  
 - Downloaded the supported map package from official website.  
 - sudo apt install vulkan-utils  
+3. The FPS of simulation is low so that the simulation occurs lagging problem.
+- Adjust the FPS parameters from Transfuser agent and environment
+5. The lag of simulation when predicting
+- There is a sync mode to ensure the time aligned between agent/environment and simulator. This will lead to the simulator become lagging since it needs to sync with environment. Hence, We can store the simulation into Carla log file and replay it after that.   
+6. The agent will stop after collision or specific scenario.  
+- This issue is from Transfuser autopilot agent. This leads to the transfuer NN will stop when it collides the pedestrian or cars and stop when it crosses the intersection. PS. This is the main drawback from the paper of Transfuser. [Solved] Removed the scenrio will prevent the agent from this stop issue.  
 
 
-```Shell
+**Metrics:** 
+| Criterion             | Result  | Value   |  
+├───────────────────────┼─────────┼─────────┤
+│ RouteCompletionTest   │ FAILURE │ 8.34 %  │
+├───────────────────────┼─────────┼─────────┤
+│ OutsideRouteLanesTest │ SUCCESS │ 0 %     │
+├───────────────────────┼─────────┼─────────┤
+│ CollisionTest         │ SUCCESS │ 0 times │
+├───────────────────────┼─────────┼─────────┤
+│ RunningRedLightTest   │ SUCCESS │ 0 times │
+├───────────────────────┼─────────┼─────────┤
+│ RunningStopTest       │ SUCCESS │ 0 times │
+├───────────────────────┼─────────┼─────────┤
+│ InRouteTest           │ SUCCESS │         │
+├───────────────────────┼─────────┼─────────┤
+│ AgentBlockedTest      │ FAILURE │         │
+├───────────────────────┼─────────┼─────────┤
+│ Timeout               │ SUCCESS │         |
+
+
+
+
+
 
 ## Dataset
 The data is generated with ```leaderboard/team_code/auto_pilot.py``` in 8 CARLA towns using the routes and scenarios files provided at ```leaderboard/data``` on CARLA 0.9.10.1
@@ -46,13 +80,29 @@ The data is generated with ```leaderboard/team_code/auto_pilot.py``` in 8 CARLA 
 chmod +x download_data.sh
 ./download_data.sh
 ```
-## Dataset  
-The dataset can be downloaded from official Transfuser github or generated from autopilot programme.  
 
-The datasets from official Transfuser github include two part.  
-1. Weather Dataset: clear_weather_data, 14_weathers_data.  
-2. Minimal dataset (63G), Large scale dataset (406G). 
+We used two datasets for different experimental settings:
+- clear_weather_data: contains only `ClearNoon` weather. This dataset is used for the experiments described in the paper and generalization to new town results shown in the [video](https://youtu.be/WxadQyQ2gMs).
+- 14_weathers_data: contains 14 preset weather conditions mentioned in ```leaderboard/team_code/auto_pilot.py```. This dataset is used for training models for the [leaderboard](https://leaderboard.carla.org/leaderboard) and the generalization to new weather results shown in the [video](https://youtu.be/WxadQyQ2gMs).
 
+The dataset is structured as follows:
+```
+- TownX_{tiny,short,long}: corresponding to different towns and routes files
+    - routes_X: contains data for an individual route
+        - rgb_{front, left, right, rear}: multi-view camera images at 400x300 resolution
+        - seg_{front, left, right, rear}: corresponding segmentation images
+        - depth_{front, left, right, rear}: corresponding depth images
+        - lidar: 3d point cloud in .npy format
+        - topdown: topdown segmentation images required for training LBC
+        - 2d_bbs_{front, left, right, rear}: 2d bounding boxes for different agents in the corresponding camera view
+        - 3d_bbs: 3d bounding boxes for different agents
+        - affordances: different types of affordances
+        - measurements: contains ego-agent's position, velocity and other metadata
+```
+
+We have provided two versions of the datasets used in our work:
+- Minimal dataset (63G): contains only `rgb_front`, `lidar` and `measurements` from the `14_weathers_data`. This is sufficient to train all the models (except LBC which also requires `topdown`).
+- Large scale dataset (406G): contains multi-view camera data with different perception labels and affordances for both `clear_weather_data` and `14_weathers_data` to facilitate further development of imitation learning agents.
 
 ## Data Generation
 In addition to the dataset, we have also provided all the scripts used for generating data and these can be modified as required for different CARLA versions.
