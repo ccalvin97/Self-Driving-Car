@@ -1,27 +1,16 @@
-# Multi-Modal Fusion Transformer for End-to-End Autonomous Driving
-
-## [Project Page](https://ap229997.github.io/projects/transfuser/) | [Paper](https://arxiv.org/pdf/2104.09224.pdf) | [Supplementary](http://www.cvlibs.net/publications/Prakash2021CVPR_supplementary.pdf) | [Video](https://youtu.be/WxadQyQ2gMs) | [Poster](https://ap229997.github.io/projects/transfuser/assets/poster.pdf) | [Blog](https://autonomousvision.github.io/transfuser)
+# Transfuser in Imitation Learning based on Carla
 
 <img src="transfuser/assets/teaser.svg" height="192" hspace=30> <img src="transfuser/assets/full_arch.svg" width="400">
 
-This repository contains the code for the CVPR 2021 paper [Multi-Modal Fusion Transformer for End-to-End Autonomous Driving](http://www.cvlibs.net/publications/Prakash2021CVPR.pdf). If you find our code or paper useful, please cite
-```bibtex
-@inproceedings{Prakash2021CVPR,
-  author = {Prakash, Aditya and Chitta, Kashyap and Geiger, Andreas},
-  title = {Multi-Modal Fusion Transformer for End-to-End Autonomous Driving},
-  booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year = {2021}
-}
-```
 
-## Contents
-1. [Setup](#setup)
-2. [Dataset](#dataset)
-3. [Data Generation](#data-generation)
-4. [Training](#training)
-5. [Evaluation](#evaluation)
-6. [CARLA Leaderboard Submission](#carla-leaderboard-submission)
-7. [Acknowledgements](#acknowledgements)
+## Research Content:  
+[transfuser Paper](https://arxiv.org/pdf/2104.09224.pdf)    
+[Model-based RL Paper](https://arxiv.org/abs/2105.00636)    
+[Model-free RL Paper](https://arxiv.org/abs/1911.10868)   
+
+## Contribution  
+Edited by kuancalvin2016@gmail.com  
+Original Code from Transfuser Official Github  
 
 ## Setup
 Install anaconda
