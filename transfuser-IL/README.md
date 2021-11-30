@@ -59,9 +59,9 @@ PS. Please make sure you install all of the things by the right order.
 │ CollisionTest         │ SUCCESS │ 0 times │
 │ RunningRedLightTest   │ SUCCESS │ 0 times │
 │ RunningStopTest       │ SUCCESS │ 0 times │
-│ InRouteTest           │ SUCCESS │         │
-│ AgentBlockedTest      │ FAILURE │         │
-│ Timeout               │ SUCCESS │         |
+│ InRouteTest           │ SUCCESS │    NA   │
+│ AgentBlockedTest      │ FAILURE │    NA   │
+│ Timeout               │ SUCCESS │    NA   |
 
 | model | Train Set | Test Set |#Params | GFLOPs | OHEM | Multi-scale| Flip | Distillation | mIoU | Link |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
