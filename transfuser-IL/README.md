@@ -15,6 +15,7 @@ Original Code from Transfuser Official Github
 ## Setup
 PS. Please make sure you install all of the things by the right order.  
 
+```
 1. Ubuntu 18.04   
 2. Nvidia GPU Driver  
 3. CUDA
@@ -23,11 +24,12 @@ PS. Please make sure you install all of the things by the right order.
 6. pyGame
 7. Carla 0.9.10.1   
 8. vulkan-utils
+```
 
-
-Trouble Shooting: 
-
-
+**Trouble Shooting:**  
+1. Import carla not found
+- Ensure you have py3.7 egg file in the dir : /opt/carla-simulator/PythonAPI/carla/dist   
+2. 
 
 
 
