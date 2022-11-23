@@ -1,0 +1,114 @@
+{
+    "_checkpoint": {
+        "global_record": {
+            "index": -1,
+            "infractions": {
+                "collisions_layout": 0.0,
+                "collisions_pedestrian": 0.0,
+                "collisions_vehicle": 2.6533584485635964,
+                "outside_route_lanes": 0.0,
+                "red_light": 2.6533584485635964,
+                "route_dev": 2.6533584485635964,
+                "route_timeout": 0.0,
+                "stop_infraction": 0.0,
+                "vehicle_blocked": 0.0
+            },
+            "meta": {
+                "exceptions": [
+                    [
+                        "RouteScenario_10",
+                        0,
+                        "Failed - Agent deviated from the route"
+                    ]
+                ]
+            },
+            "route_id": -1,
+            "scores": {
+                "score_composed": 14.028767014031025,
+                "score_penalty": 0.42,
+                "score_route": 33.4018262238834
+            },
+            "scores_std_dev": {
+                "score_composed": "NaN",
+                "score_penalty": "NaN",
+                "score_route": "NaN"
+            },
+            "status": "Failed"
+        },
+        "progress": [
+            1,
+            1
+        ],
+        "records": [
+            {
+                "index": 0,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.bmw.grandtourer and id=611 at (x=240.788, y=152.274, z=1.342)"
+                    ],
+                    "outside_route_lanes": [],
+                    "red_light": [
+                        "Agent ran a red light 532 at (x=249.4, y=46.07, z=0.2)"
+                    ],
+                    "route_dev": [
+                        "Agent deviated from the route at (x=241.168, y=32.583, z=0.002)"
+                    ],
+                    "route_timeout": [],
+                    "stop_infraction": [],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 116.40000173449516,
+                    "duration_system": 162.59114503860474,
+                    "route_length": 1128.3240988201576
+                },
+                "route_id": "RouteScenario_10",
+                "scores": {
+                    "score_composed": 14.028767014031025,
+                    "score_penalty": 0.42,
+                    "score_route": 33.4018262238834
+                },
+                "status": "Failed - Agent deviated from the route"
+            }
+        ]
+    },
+    "eligible": true,
+    "entry_status": "Finished with agent errors",
+    "labels": [
+        "Avg. driving score",
+        "Avg. route completion",
+        "Avg. infraction penalty",
+        "Collisions with pedestrians",
+        "Collisions with vehicles",
+        "Collisions with layout",
+        "Red lights infractions",
+        "Stop sign infractions",
+        "Off-road infractions",
+        "Route deviations",
+        "Route timeouts",
+        "Agent blocked"
+    ],
+    "sensors": [
+        "carla_collision",
+        "carla_speedometer",
+        "carla_gnss",
+        "carla_stich_rgb",
+        "carla_camera"
+    ],
+    "values": [
+        "14.029",
+        "33.402",
+        "0.420",
+        "0.000",
+        "2.653",
+        "0.000",
+        "2.653",
+        "0.000",
+        "0.000",
+        "2.653",
+        "0.000",
+        "0.000"
+    ]
+}
